@@ -1,0 +1,23 @@
+<!-- home.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <title>Home_Page</title>
+    <link rel="stylesheet"  href="{% static 'home.css'%}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Space+Mono|Muli">
+</head>
+<body>
+    <marquee>This website is an online platform for a bookshop. button"</marquee>
+
+    <h2>Welcome to the Online Book Store. &#129392</h2>
+    <p>Welcome to [The Story Shop]! We're not just a store; we're passionate about the magic of books. Dive into our collection and discover new worlds, characters, and ideas. Let's embark on a reading journey together. Happy exploring!  &#128218;</p>
+
+    <div class="btn1">
+        <a href="{% url 'register' %}"><button class="button">Registration</button></a>
+        <a href="{% url 'signin' %}"><button class="button">Login</button></a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'reg.css' %}">
+</head>
+<body>
+    <div class="blockcode">
+        <img src="{% static 'bk.png' %}" alt="Background Image">
+        <div class="container">
+            <h1>Registration</h1>
+            <!-- {% if messages %} -->
+                <div class="mes">
+                    {% for message in messages %}
+                        <strong  style="color: red;">{{ message }}</strong>
+                    {% endfor %}
+                </div>
+            <!-- {% endif %} -->
+            <form action="{% url 'register' %}" method="POST">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" name="username" id="username" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="fname">First Name</label>
+                    <input type="text" name="fname" id="fname" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="lname">Last Name</label>
+                    <input type="text" name="lname" id="lname" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="text" name="email" id="email" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="pass1">Password</label>
+                    <input type="password" name="pass1" id="pass1" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="pass2">Confirm Password</label>
+                    <input type="password" name="pass2" id="pass2" class="form-control" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Registration</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
